@@ -3189,7 +3189,7 @@
     "_name": "A List Apart",
     ".": [
       {
-        "title": "Unknown",
+        "title": "Home Feed",
         "docs": "https://docs.rsshub.app/routes/programming",
         "source": [
           "/articles/"
@@ -8400,7 +8400,7 @@
         "source": [
           "/popular"
         ],
-        "target": "/daily/"
+        "target": "/daily/popular"
       },
       {
         "title": "Source Posts",
@@ -8409,6 +8409,14 @@
           "/sources/:sourceId"
         ],
         "target": "/daily/source/:sourceId"
+      },
+      {
+        "title": "Squads",
+        "docs": "https://docs.rsshub.app/routes/social-media",
+        "source": [
+          "/squads/:squads"
+        ],
+        "target": "/daily/squads/:squads"
       },
       {
         "title": "Most upvoted",

@@ -6264,14 +6264,15 @@
             "source": [
               "alistapart.com/articles/"
             ],
-            "target": ""
+            "target": "/"
           }
         ],
-        "name": "Unknown",
+        "name": "Home Feed",
         "maintainers": [
           "Rjnishant530"
         ],
         "url": "alistapart.com/articles/",
+        "example": "/alistapart",
         "location": "index.ts"
       },
       "/:topic": {
@@ -6295,7 +6296,8 @@
           {
             "source": [
               "alistapart.com/blog/topic/:topic"
-            ]
+            ],
+            "target": "/:topic"
           }
         ],
         "name": "Topics",
@@ -21115,11 +21117,20 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/discussed",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content",
+              "optional": true
+            }
+          ]
+        },
         "location": "discussed.ts"
       },
-      "/": {
-        "path": "/",
-        "example": "/daily",
+      "/popular": {
+        "path": "/popular",
+        "example": "/daily/popular",
         "radar": [
           {
             "source": [
@@ -21132,7 +21143,16 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/popular",
-        "location": "index.ts"
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content",
+              "optional": true
+            }
+          ]
+        },
+        "location": "popular.ts"
       },
       "/source/:sourceId": {
         "path": "/source/:sourceId",
@@ -21152,7 +21172,42 @@
           "TonyRL"
         ],
         "url": "app.daily.dev",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content",
+              "optional": true
+            }
+          ]
+        },
         "location": "source.ts"
+      },
+      "/squads/:squads": {
+        "path": "/squads/:squads",
+        "example": "/daily/squads/watercooler",
+        "radar": [
+          {
+            "source": [
+              "app.daily.dev/squads/:squads"
+            ]
+          }
+        ],
+        "name": "Squads",
+        "maintainers": [
+          "Rjnishant530"
+        ],
+        "url": "app.daily.dev/squads/discover",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content",
+              "optional": true
+            }
+          ]
+        },
+        "location": "squads.ts"
       },
       "/upvoted": {
         "path": "/upvoted",
@@ -21169,6 +21224,15 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/upvoted",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content. TRUE/FALSE",
+              "optional": true
+            }
+          ]
+        },
         "location": "upvoted.ts"
       },
       "/user/:userId": {
@@ -21187,6 +21251,15 @@
           "TonyRL"
         ],
         "url": "app.daily.dev",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
+              "description": "Retrieve the content from shared posts rather than original post content",
+              "optional": true
+            }
+          ]
+        },
         "location": "user.ts"
       }
     },
