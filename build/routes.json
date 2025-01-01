@@ -21102,9 +21102,10 @@
   },
   "daily": {
     "routes": {
-      "/discussed": {
-        "path": "/discussed",
-        "example": "/daily/discussed",
+      "/discussed/:period?": {
+        "path": "/discussed/:period?",
+        "example": "/daily/discussed/30",
+        "view": 0,
         "radar": [
           {
             "source": [
@@ -21117,20 +21118,32 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/discussed",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content",
-              "optional": true
-            }
-          ]
+        "parameters": {
+          "period": {
+            "description": "Period of Lookup",
+            "default": "7",
+            "options": [
+              {
+                "value": "7",
+                "label": "Last Week"
+              },
+              {
+                "value": "30",
+                "label": "Last Month"
+              },
+              {
+                "value": "365",
+                "label": "Last Year"
+              }
+            ]
+          }
         },
         "location": "discussed.ts"
       },
       "/popular": {
         "path": "/popular",
         "example": "/daily/popular",
+        "view": 0,
         "radar": [
           {
             "source": [
@@ -21143,15 +21156,6 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/popular",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content",
-              "optional": true
-            }
-          ]
-        },
         "location": "popular.ts"
       },
       "/source/:sourceId": {
@@ -21172,20 +21176,12 @@
           "TonyRL"
         ],
         "url": "app.daily.dev",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content",
-              "optional": true
-            }
-          ]
-        },
         "location": "source.ts"
       },
       "/squads/:squads": {
         "path": "/squads/:squads",
         "example": "/daily/squads/watercooler",
+        "view": 0,
         "radar": [
           {
             "source": [
@@ -21198,20 +21194,12 @@
           "Rjnishant530"
         ],
         "url": "app.daily.dev/squads/discover",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content",
-              "optional": true
-            }
-          ]
-        },
         "location": "squads.ts"
       },
-      "/upvoted": {
-        "path": "/upvoted",
-        "example": "/daily/upvoted",
+      "/upvoted/:period?": {
+        "path": "/upvoted/:period?",
+        "example": "/daily/upvoted/7",
+        "view": 0,
         "radar": [
           {
             "source": [
@@ -21219,20 +21207,31 @@
             ]
           }
         ],
+        "parameters": {
+          "period": {
+            "description": "Period of Lookup",
+            "default": "7",
+            "options": [
+              {
+                "value": "7",
+                "label": "Last Week"
+              },
+              {
+                "value": "30",
+                "label": "Last Month"
+              },
+              {
+                "value": "365",
+                "label": "Last Year"
+              }
+            ]
+          }
+        },
         "name": "Most upvoted",
         "maintainers": [
           "Rjnishant530"
         ],
         "url": "app.daily.dev/upvoted",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content. TRUE/FALSE",
-              "optional": true
-            }
-          ]
-        },
         "location": "upvoted.ts"
       },
       "/user/:userId": {
@@ -21251,15 +21250,6 @@
           "TonyRL"
         ],
         "url": "app.daily.dev",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "DAILY_DEV_INNER_SHARED_CONTENT",
-              "description": "Retrieve the content from shared posts rather than original post content",
-              "optional": true
-            }
-          ]
-        },
         "location": "user.ts"
       }
     },

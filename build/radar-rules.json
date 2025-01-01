@@ -8392,7 +8392,7 @@
         "source": [
           "/discussed"
         ],
-        "target": "/daily/discussed"
+        "target": "/daily/discussed/:period?"
       },
       {
         "title": "Popular",
@@ -8424,7 +8424,7 @@
         "source": [
           "/upvoted"
         ],
-        "target": "/daily/upvoted"
+        "target": "/daily/upvoted/:period?"
       },
       {
         "title": "User Posts",

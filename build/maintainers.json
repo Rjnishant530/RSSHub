@@ -1651,7 +1651,7 @@
   "/dahecube/:type?": [
     "linbuxiao"
   ],
-  "/daily/discussed": [
+  "/daily/discussed/:period?": [
     "Rjnishant530"
   ],
   "/daily/popular": [
@@ -1663,7 +1663,7 @@
   "/daily/squads/:squads": [
     "Rjnishant530"
   ],
-  "/daily/upvoted": [
+  "/daily/upvoted/:period?": [
     "Rjnishant530"
   ],
   "/daily/user/:userId": [
