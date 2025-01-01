@@ -1651,19 +1651,16 @@
   "/dahecube/:type?": [
     "linbuxiao"
   ],
-  "/daily/discussed/:period?": [
+  "/daily/discussed": [
     "Rjnishant530"
   ],
-  "/daily/popular": [
+  "/daily/": [
     "Rjnishant530"
   ],
   "/daily/source/:sourceId": [
     "TonyRL"
   ],
-  "/daily/squads/:squads": [
-    "Rjnishant530"
-  ],
-  "/daily/upvoted/:period?": [
+  "/daily/upvoted": [
     "Rjnishant530"
   ],
   "/daily/user/:userId": [
@@ -4080,6 +4077,9 @@
   ],
   "/konghq/blog-posts": [
     "piglei"
+  ],
+  "/koreaherald/:category{.+}?": [
+    "quiniapiezoelectricity"
   ],
   "/kpmg/insights/:lang?": [
     "LogicJake"
@@ -7570,6 +7570,12 @@
   "/xaut/rsc/:category?": [
     "mocusez",
     "light0926"
+  ],
+  "/xbmu/academic": [
+    "PrinOrange"
+  ],
+  "/xbmu/announcement": [
+    "PrinOrange"
   ],
   "/xbookcn/:label?": [
     "Lyunvy"

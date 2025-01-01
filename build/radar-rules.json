@@ -3189,7 +3189,7 @@
     "_name": "A List Apart",
     ".": [
       {
-        "title": "Home Feed",
+        "title": "Unknown",
         "docs": "https://docs.rsshub.app/routes/programming",
         "source": [
           "/articles/"
@@ -8392,7 +8392,7 @@
         "source": [
           "/discussed"
         ],
-        "target": "/daily/discussed/:period?"
+        "target": "/daily/discussed"
       },
       {
         "title": "Popular",
@@ -8400,7 +8400,7 @@
         "source": [
           "/popular"
         ],
-        "target": "/daily/popular"
+        "target": "/daily/"
       },
       {
         "title": "Source Posts",
@@ -8411,20 +8411,12 @@
         "target": "/daily/source/:sourceId"
       },
       {
-        "title": "Squads",
-        "docs": "https://docs.rsshub.app/routes/social-media",
-        "source": [
-          "/squads/:squads"
-        ],
-        "target": "/daily/squads/:squads"
-      },
-      {
         "title": "Most upvoted",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
           "/upvoted"
         ],
-        "target": "/daily/upvoted/:period?"
+        "target": "/daily/upvoted"
       },
       {
         "title": "User Posts",
@@ -17762,6 +17754,19 @@
           "/blog/*"
         ],
         "target": "/konghq/blog-posts"
+      }
+    ]
+  },
+  "koreaherald.com": {
+    "_name": "The Korea Herald",
+    "www": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:category"
+        ],
+        "target": "/koreaherald/:category"
       }
     ]
   },
