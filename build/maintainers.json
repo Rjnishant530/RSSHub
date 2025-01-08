@@ -135,9 +135,6 @@
   "/2023game/:category?/:tab?": [
     "xzzpig"
   ],
-  "/21caijing/channel/:name{.+}?": [
-    "nczitzk"
-  ],
   "/2cycd/:fid/:sort?": [
     "shelken"
   ],
@@ -1338,9 +1335,6 @@
     "yuxinliu-alex"
   ],
   "/chinania/:category{.+}?": [
-    "nczitzk"
-  ],
-  "/chinaratings/CreditResearch/:category{.+}?": [
     "nczitzk"
   ],
   "/chinathinktanks/:id": [
@@ -3210,7 +3204,16 @@
     "nczitzk",
     "pseudoyu"
   ],
-  "/hdu/auto/:type?": [
+  "/hdu/auto/graduate": [
+    "jalenzz"
+  ],
+  "/hdu/auto": [
+    "jalenzz"
+  ],
+  "/hdu/auto/student": [
+    "jalenzz"
+  ],
+  "/hdu/auto/undergraduate": [
     "jalenzz"
   ],
   "/hdu/cs": [
@@ -4437,9 +4440,6 @@
   ],
   "/medieval-china/": [
     "artefaritaKuniklo"
-  ],
-  "/medium/feed/:user": [
-    "pseudoyu"
   ],
   "/medium/following/:user": [
     "ImSingee"
@@ -6517,10 +6517,6 @@
   "/steam/appcommunityfeed/:appid/:routeParams?": [
     "NyaaaDoge"
   ],
-  "/steam/curator/:id/:routeParams?": [
-    "naremloa",
-    "fenxer"
-  ],
   "/steam/search/:params": [
     "moppman"
   ],
@@ -8011,9 +8007,6 @@
   ],
   "/zhihu/people/activities/:id": [
     "DIYgod"
-  ],
-  "/zhihu/people/allCollections/:id": [
-    "Healthyyue"
   ],
   "/zhihu/people/answers/:id": [
     "DIYgod",
