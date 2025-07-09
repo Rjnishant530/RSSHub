@@ -11157,6 +11157,35 @@
       }
     ]
   },
+  "css-tricks.com": {
+    "_name": "CSS-Tricks",
+    ".": [
+      {
+        "title": "Articles",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/category/articles/"
+        ],
+        "target": "/css-tricks/articles"
+      },
+      {
+        "title": "CSS Guides",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/"
+        ],
+        "target": "/css-tricks/collections/:type"
+      },
+      {
+        "title": "Popular this month",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/"
+        ],
+        "target": "/css-tricks/popular"
+      }
+    ]
+  },
   "csu.edu.cn": {
     "_name": "中南大学",
     "career": [
@@ -26480,6 +26509,48 @@
       }
     ]
   },
+  "musify.club": {
+    "_name": "musify",
+    ".": [
+      {
+        "title": "Latest",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/:language"
+        ],
+        "target": "/musify/:language"
+      },
+      {
+        "title": "Latest",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/en"
+        ],
+        "target": "/musify/en"
+      },
+      {
+        "title": "​​Последняя",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/"
+        ],
+        "target": "/musify/"
+      }
+    ]
+  },
+  "musikguru.de": {
+    "_name": "MusikGuru",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/news"
+        ],
+        "target": "/musikgurunews"
+      }
+    ]
+  },
   "mwm.net.cn": {
     "_name": "管理世界",
     ".": [
@@ -38134,6 +38205,22 @@
   "visionias.in": {
     "_name": "VisionIAS",
     ".": [
+      {
+        "title": "Daily News Summary",
+        "docs": "https://docs.rsshub.app/routes/study",
+        "source": [
+          "/current-affairs/upsc-daily-news-summary"
+        ],
+        "target": "/visionias/dailySummary"
+      },
+      {
+        "title": "Monthly Magazine",
+        "docs": "https://docs.rsshub.app/routes/study",
+        "source": [
+          "/current-affairs/monthly-magazine"
+        ],
+        "target": "/visionias/monthlyMagazine"
+      },
       {
         "title": "News Today",
         "docs": "https://docs.rsshub.app/routes/study",
