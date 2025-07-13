@@ -41096,6 +41096,98 @@ export default {
         "location": "notifications.ts",
         "module": () => import('@/routes/github/notifications.ts')
       },
+      "/feed/:user/:types?": {
+        "path": "/feed/:user/:types?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/github/feed/yihong0618/star,release,pr",
+        "parameters": {
+          "user": "GitHub username",
+          "types": {
+            "description": "Event types to include, comma separated",
+            "default": "all",
+            "options": [
+              {
+                "label": "All events",
+                "value": "all"
+              },
+              {
+                "label": "Create events",
+                "value": "create"
+              },
+              {
+                "label": "Delete events",
+                "value": "delete"
+              },
+              {
+                "label": "Fork events",
+                "value": "fork"
+              },
+              {
+                "label": "Issue comment events",
+                "value": "issuecomm"
+              },
+              {
+                "label": "Member events",
+                "value": "member"
+              },
+              {
+                "label": "Pull request events",
+                "value": "pr"
+              },
+              {
+                "label": "Pull request review comment events",
+                "value": "prcomm"
+              },
+              {
+                "label": "Public events",
+                "value": "public"
+              },
+              {
+                "label": "Push events",
+                "value": "push"
+              },
+              {
+                "label": "Release events",
+                "value": "release"
+              },
+              {
+                "label": "Watch events (stars)",
+                "value": "star"
+              }
+            ]
+          }
+        },
+        "features": {
+          "requireConfig": [
+            {
+              "name": "GITHUB_ACCESS_TOKEN",
+              "optional": true,
+              "description": "GitHub access token to access private events"
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "github.com/:user"
+            ],
+            "target": "/feed/:user"
+          }
+        ],
+        "name": "User's Feed",
+        "maintainers": [
+          "RtYkk"
+        ],
+        "location": "private-feed.ts",
+        "module": () => import('@/routes/github/private-feed.ts')
+      },
       "/pull/:user/:repo/:state?/:labels?": {
         "path": "/pull/:user/:repo/:state?/:labels?",
         "categories": [
@@ -41433,7 +41525,7 @@ export default {
     "name": "GitHub",
     "apiRoutes": {},
     "url": "github.com",
-    "description": "::: tip\nGitHub provides some official RSS feeds:\n\n-   Repo releases: `https://github.com/:owner/:repo/releases.atom`\n-   Repo commits: `https://github.com/:owner/:repo/commits.atom`\n-   User activities: `https://github.com/:user.atom`\n-   Private feed: `https://github.com/:user.private.atom?token=:secret` (You can find **Subscribe to your news feed** in [dashboard](https://github.com) page after login)\n-   Wiki history: `https://github.com/:owner/:repo/wiki.atom`\n:::",
+    "description": "::: tip\nGitHub provides some official RSS feeds:\n\n-   Repo releases: `https://github.com/:owner/:repo/releases.atom`\n-   Repo commits: `https://github.com/:owner/:repo/commits.atom`\n-   User activities: `https://github.com/:user.atom`\n-   Private feed: `https://github.com/:user.private.atom?token=:secret` (Note: You can ONLY obtain this url via an [API](https://docs.github.com/en/rest/activity/feeds?apiVersion=2022-11-28) call with a [Personal Access Token](https://github.com/settings/tokens/new) with **ENOUGH** scopes now.)\n-   Wiki history: `https://github.com/:owner/:repo/wiki.atom`\n:::",
     "lang": "en"
   },
   "gitpod": {
@@ -71076,6 +71168,48 @@ export default {
     "name": "MySQL",
     "url": "dev.mysql.com",
     "lang": "en"
+  },
+  "nankai": {
+    "routes": {
+      "/yzb/:type?": {
+        "path": "/yzb/:type?",
+        "categories": [
+          "university"
+        ],
+        "example": "/nankai/yzb/5509",
+        "parameters": {
+          "type": "栏目名（若为空则默认为“硕士招生”）"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "yzb.nankai.edu.cn",
+              "yzb.nankai.edu.cn/:type/list.htm"
+            ],
+            "target": "/yzb/:type?"
+          }
+        ],
+        "name": "研究生招生网",
+        "maintainers": [
+          "sddzhyc"
+        ],
+        "description": "| 硕士招生 | 博士招生 | 港澳台研究生最新信息 |\n| -------- | -------- | -------- |\n| 5509     | 2552    | 2562   |",
+        "url": "yzb.nankai.edu.cn",
+        "location": "yzb.ts",
+        "module": () => import('@/routes/nankai/yzb.ts')
+      }
+    },
+    "name": "南开大学",
+    "url": "yzb.nankai.edu.cn",
+    "lang": "zh-CN"
   },
   "nasa": {
     "routes": {
@@ -109693,6 +109827,451 @@ export default {
     "apiRoutes": {},
     "url": "support.wdc.com",
     "lang": "en"
+  },
+  "wdfxw": {
+    "routes": {
+      "/bookfree/:id?": {
+        "path": "/bookfree/:id?",
+        "name": "免费区",
+        "url": "www.wdfxw.net",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/wdfxw/bookfree",
+        "parameters": {
+          "category": {
+            "description": "分类，默认为空，即全部，可在对应分类页 URL 中找到",
+            "options": [
+              {
+                "label": "全部",
+                "value": ""
+              },
+              {
+                "label": "行业标准",
+                "value": "00002"
+              },
+              {
+                "label": "国家标准GB",
+                "value": "00001"
+              },
+              {
+                "label": "国外标准",
+                "value": "00003"
+              },
+              {
+                "label": "监理资料",
+                "value": "00004"
+              },
+              {
+                "label": "施工组织设计",
+                "value": "00005"
+              },
+              {
+                "label": "土木工程毕业设计论文",
+                "value": "00006"
+              },
+              {
+                "label": "机械类毕业设计论文",
+                "value": "00007"
+              },
+              {
+                "label": "小学课件教学资料",
+                "value": "00008"
+              },
+              {
+                "label": "初中课件教学资料",
+                "value": "00009"
+              },
+              {
+                "label": "高中课件教学资料",
+                "value": "00010"
+              },
+              {
+                "label": "工作计划个人总结",
+                "value": "00011"
+              },
+              {
+                "label": "中学小学教案导学案与教学设计",
+                "value": "00012"
+              },
+              {
+                "label": "作文大全",
+                "value": "00013"
+              },
+              {
+                "label": "幼儿教育",
+                "value": "00014"
+              },
+              {
+                "label": "论文",
+                "value": "00015"
+              },
+              {
+                "label": "财务管理",
+                "value": "00016"
+              },
+              {
+                "label": "管理信息化",
+                "value": "00017"
+              },
+              {
+                "label": "行业分类",
+                "value": "00018"
+              },
+              {
+                "label": "合同样本",
+                "value": "00019"
+              },
+              {
+                "label": "品质管理",
+                "value": "00020"
+              },
+              {
+                "label": "企业管理",
+                "value": "00021"
+              },
+              {
+                "label": "人力资源",
+                "value": "00022"
+              },
+              {
+                "label": "生产管理",
+                "value": "00023"
+              },
+              {
+                "label": "市场营销",
+                "value": "00024"
+              },
+              {
+                "label": "制度表格",
+                "value": "00025"
+              },
+              {
+                "label": "行业资料",
+                "value": "00026"
+              },
+              {
+                "label": "国家标准",
+                "value": "00027"
+              },
+              {
+                "label": "软件教程",
+                "value": "00028"
+              },
+              {
+                "label": "标准汇编",
+                "value": "00029"
+              },
+              {
+                "label": "其他",
+                "value": "00030"
+              },
+              {
+                "label": "职业资格考试",
+                "value": "00031"
+              },
+              {
+                "label": "股票证券行业研究报告(研报）",
+                "value": "00032"
+              },
+              {
+                "label": "基金申请",
+                "value": "00033"
+              },
+              {
+                "label": "教师资格证考试资料",
+                "value": "00034"
+              },
+              {
+                "label": "专利说明书",
+                "value": "00035"
+              }
+            ]
+          }
+        },
+        "description": ":::tip\n订阅 [行业标准](https://www.wdfxw.net/bookfree-00002.html)，其源网址为 `https://www.wdfxw.net/bookfree-00002.html`，请参考该 URL 指定部分构成参数，此时路由为 [`/wdfxw/bookfree/00002`](https://rsshub.app/wdfxw/bookfree/00002)。\n:::\n\n<details>\n  <summary>更多分类</summary>\n\n| 分类                                                                      | ID                                                   |\n| ------------------------------------------------------------------------- | ---------------------------------------------------- |\n| [全部](https://www.wdfxw.net/bookfree.html)                               | [<无>](https://rsshub.app/wdfxw/bookfree)            |\n| [行业标准](https://www.wdfxw.net/bookfree-00002.html)                     | [00002](https://rsshub.app/wdfxw/bookfree/00002)     |\n| [国家标准 GB](https://www.wdfxw.net/bookfree-00001.html)                  | [00001](https://rsshub.app/wdfxw/bookfree/00001)     |\n| [国外标准](https://www.wdfxw.net/bookfree-00003.html)                     | [00003](https://rsshub.app/wdfxw/bookfree/00003)     |\n| [监理资料](https://www.wdfxw.net/bookfree-00004.html)                     | [00004](https://rsshub.app/wdfxw/bookfree/00004)     |\n| [施工组织设计](https://极速.wdfxw.net/bookfree-00005.html)                | [00005](https://rsshub.app/wdfxw/bookfree/00005)     |\n| [土木工程毕业设计论文](https://www.wdfxw.net/bookfree-00006.html)         | [00006](https://rsshub.app/wdfxw/bookfree/00006)     |\n| [机械类毕业设计论文](https://www.wdfxw.net/bookfree-00007.html)           | [00007](https://rsshub.app/wdfxw/bookfree/00007)     |\n| [小学课件教学资料](https://www.wdfxw.net/bookfree-00008.html)             | [00008](https://rsshub.app/wdfxw/bookfree/00008)     |\n| [初中课件教学资料](https://www.wdfxw.net/bookfree-00009.html)             | [00009](https://rsshub.app/wdfxw/bookfree/00009)     |\n| [高中课件教学资料](https://www.wdfxw.net/bookfree-00010.html)             | [00010](https://rsshub.app/wdfxw/bookfree/00010)     |\n| [工作计划个人总结](https://www.wdfxw.net/bookfree-00011.html)             | [00011](极速//rsshub.app/wdfxw/bookfree/00011)       |\n| [中学小学教案导学案与教学设计](https://www.wdfxw.net/bookfree-00012.html) | [00012](https://rsshub.app/wdfxw/bookfree/00012)     |\n| [作文大全](https://www.wdfxw.net/bookfree-00013.html)                     | [00013](https://rsshub.app/wdfxw/bookfree/00013)     |\n| [幼儿教育](https://www.wdfxw.net/bookfree-00014.html)                     | [00014](https://rsshub.app/wdfxw/bookfree/00014)     |\n| [论文](https://www.wdfxw.net/bookfree-00015.html)                         | [00015](https://rsshub.app/wdfxw/bookfree/00015)     |\n| [财务管理](https://www.wdfxw.net/bookfree-00016.html)                     | [00016](https://rsshub.app/wdfxw/bookfree/00016)     |\n| [管理信息化](https://www.wdfxw.net/bookfree-00017.html)                   | [00017](https://rsshub.app/wdfxw/bookfree/00017)     |\n| [行业分类](https://www.wdfxw.net/bookfree-00018.html)                     | [00018](https://rsshub.app/wdfxw/bookfree/00018)     |\n| [合同样本](https://www.wdfxw.net/bookfree-00019.html)                     | [00019](https://rsshub.app/wdf极速xw/bookfree/00019) |\n| [品质管理](https://www.wdfxw.net/bookfree-00020.html)                     | [00020](https://rsshub.app/wdfxw/bookfree/00020)     |\n| [企业管理](https://www.wdfxw.net/bookfree-00021.html)                     | [00021](https://rsshub.app/wdfxw/bookfree/00021)     |\n| [人力资源](https://www.wdfxw.net/bookfree-00022.html)                     | [00022](https://rsshub.app/wdfxw/bookfree/00022)     |\n| [生产管理](https://www.wdfxw.net/bookfree-00023.html)                     | [00023](https://rsshub.app/wdfxw/bookfree/00023)     |\n| [市场营销](https://www.wdfxw.net/bookfree-00024.html)                     | [00024](https://rsshub.app/wdfxw/bookfree/00024)     |\n| [制度表格](https://www.wdfxw.net/bookfree-00025.html)                     | [00025](https://rsshub.app/wdfxw/bookfree/00025)     |\n| [行业资料](https://www.wdfxw.net/bookfree-00026.html)                     | [00026](https://rsshub.app/wdfxw/bookfree/00026)     |\n| [国家标准](https://www.wdfxw.net/bookfree-00027.html)                     | [00027](https://rsshub.app/wdfxw/bookfree/00027)     |\n| [软件教程](https://www.wdfxw.net/bookfree-00028.html)                     | [00028](https://rsshub.app/wdfxw/bookfree/00028)     |\n| [标准汇编](https://www.wdfxw.net/bookfree-00029.html)                     | [00029](https://rsshub.app/wdfxw/bookfree/00029)     |\n| [其他](https://www.wdfxw.net/bookfree-00030.html)                         | [00030](https://rsshub.app/wdfxw/bookfree/00030)     |\n| [职业资格考试](https://www.wdfxw.net/bookfree-00031.html)                 | [00031](https://rsshub.app/wdfxw/bookfree/00031)     |\n| [股票证券行业研究报告(研报）](https://www.wdfxw.net/bookfree-00032.html)  | [00032](https://rsshub.app/wdfxw/bookfree/00032)     |\n| [基金申请](https://www.wdfxw.net/bookfree-00033.html)                     | [00033](https://rsshub.app/wdfxw/bookfree/00033)     |\n| [教师资格证考试资料](https://www.wdfxw.net/bookfree-00034.html)           | [00034](https://rsshub.app/wdfxw/bookfree/00034)     |\n| [专利说明书](https://www.wdfxw.net/bookfree-00035.html)                   | [00035](https://rsshub.app/wdfxw/bookfree/00035)     |\n\n</details>\n",
+        "categories": [
+          "reading"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.wdfxw.net"
+            ],
+            "target": "/bookfree"
+          },
+          {
+            "title": "全部",
+            "source": [
+              "www.wdfxw.net/bookfree.html"
+            ],
+            "target": "/bookfree"
+          },
+          {
+            "title": "行业标准",
+            "source": [
+              "www.wdfxw.net/bookfree-00002.html"
+            ],
+            "target": "/bookfree/00002"
+          },
+          {
+            "title": "国家标准GB",
+            "source": [
+              "www.wdfxw.net/bookfree-00001.html"
+            ],
+            "target": "/bookfree/00001"
+          },
+          {
+            "title": "国外标准",
+            "source": [
+              "www.wdfxw.net/bookfree-00003.html"
+            ],
+            "target": "/bookfree/00003"
+          },
+          {
+            "title": "监理资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00004.html"
+            ],
+            "target": "/bookfree/00004"
+          },
+          {
+            "title": "施工组织设计",
+            "source": [
+              "www.wdfxw.net/bookfree-00005.html"
+            ],
+            "target": "/bookfree/00005"
+          },
+          {
+            "title": "土木工程毕业设计论文",
+            "source": [
+              "www.wdfxw.net/bookfree-00006.html"
+            ],
+            "target": "/bookfree/00006"
+          },
+          {
+            "title": "机械类毕业设计论文",
+            "source": [
+              "www.wdfxw.net/bookfree-00007.html"
+            ],
+            "target": "/bookfree/00007"
+          },
+          {
+            "title": "小学课件教学资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00008.html"
+            ],
+            "target": "/bookfree/00008"
+          },
+          {
+            "title": "初中课件教学资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00009.html"
+            ],
+            "target": "/bookfree/00009"
+          },
+          {
+            "title": "高中课件教学资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00010.html"
+            ],
+            "target": "/bookfree/00010"
+          },
+          {
+            "title": "工作计划个人总结",
+            "source": [
+              "www.wdfxw.net/bookfree-00011.html"
+            ],
+            "target": "/bookfree/00011"
+          },
+          {
+            "title": "中学小学教案导学案与教学设计",
+            "source": [
+              "www.wdfxw.net/bookfree-00012.html"
+            ],
+            "target": "/bookfree/00012"
+          },
+          {
+            "title": "作文大全",
+            "source": [
+              "www.wdfxw.net/bookfree-00013.html"
+            ],
+            "target": "/bookfree/00013"
+          },
+          {
+            "title": "幼儿教育",
+            "source": [
+              "www.wdfxw.net/bookfree-00014.html"
+            ],
+            "target": "/bookfree/00014"
+          },
+          {
+            "title": "论文",
+            "source": [
+              "www.wdfxw.net/bookfree-00015.html"
+            ],
+            "target": "/bookfree/00015"
+          },
+          {
+            "title": "财务管理",
+            "source": [
+              "www.wdfxw.net/bookfree-00016.html"
+            ],
+            "target": "/bookfree/00016"
+          },
+          {
+            "title": "管理信息化",
+            "source": [
+              "www.wdfxw.net/bookfree-00017.html"
+            ],
+            "target": "/bookfree/00017"
+          },
+          {
+            "title": "行业分类",
+            "source": [
+              "www.wdfxw.net/bookfree-00018.html"
+            ],
+            "target": "/bookfree/00018"
+          },
+          {
+            "title": "合同样本",
+            "source": [
+              "www.wdfxw.net/bookfree-00019.html"
+            ],
+            "target": "/bookfree/00019"
+          },
+          {
+            "title": "品质管理",
+            "source": [
+              "www.wdfxw.net/bookfree-00020.html"
+            ],
+            "target": "/bookfree/00020"
+          },
+          {
+            "title": "企业管理",
+            "source": [
+              "www.wdfxw.net/bookfree-00021.html"
+            ],
+            "target": "/bookfree/00021"
+          },
+          {
+            "title": "人力资源",
+            "source": [
+              "www.wdfxw.net/bookfree-00022.html"
+            ],
+            "target": "/bookfree/00022"
+          },
+          {
+            "title": "生产管理",
+            "source": [
+              "www.wdfxw.net/bookfree-00023.html"
+            ],
+            "target": "/bookfree/00023"
+          },
+          {
+            "title": "市场营销",
+            "source": [
+              "www.wdfxw.net/bookfree-00024.html"
+            ],
+            "target": "/bookfree/00024"
+          },
+          {
+            "title": "制度表格",
+            "source": [
+              "www.wdfxw.net/bookfree-00025.html"
+            ],
+            "target": "/bookfree/00025"
+          },
+          {
+            "title": "行业资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00026.html"
+            ],
+            "target": "/bookfree/00026"
+          },
+          {
+            "title": "国家标准",
+            "source": [
+              "www.wdfxw.net/bookfree-00027.html"
+            ],
+            "target": "/bookfree/00027"
+          },
+          {
+            "title": "软件教程",
+            "source": [
+              "www.wdfxw.net/bookfree-00028.html"
+            ],
+            "target": "/bookfree/00028"
+          },
+          {
+            "title": "标准汇编",
+            "source": [
+              "www.wdfxw.net/bookfree-00029.html"
+            ],
+            "target": "/bookfree/00029"
+          },
+          {
+            "title": "其他",
+            "source": [
+              "www.wdfxw.net/bookfree-00030.html"
+            ],
+            "target": "/bookfree/00030"
+          },
+          {
+            "title": "职业资格考试",
+            "source": [
+              "www.wdfxw.net/bookfree-00031.html"
+            ],
+            "target": "/bookfree/00031"
+          },
+          {
+            "title": "股票证券行业研究报告(研报）",
+            "source": [
+              "www.wdfxw.net/bookfree-00032.html"
+            ],
+            "target": "/bookfree/00032"
+          },
+          {
+            "title": "基金申请",
+            "source": [
+              "www.wdfxw.net/bookfree-00033.html"
+            ],
+            "target": "/bookfree/00033"
+          },
+          {
+            "title": "教师资格证考试资料",
+            "source": [
+              "www.wdfxw.net/bookfree-00034.html"
+            ],
+            "target": "/bookfree/00034"
+          },
+          {
+            "title": "专利说明书",
+            "source": [
+              "www.wdfxw.net/bookfree-00035.html"
+            ],
+            "target": "/bookfree/00035"
+          }
+        ],
+        "view": 0,
+        "location": "bookfree.ts",
+        "module": () => import('@/routes/wdfxw/bookfree.ts')
+      }
+    },
+    "name": "WDFXW文档分享网",
+    "apiRoutes": {},
+    "url": "wdfxw.net",
+    "description": "",
+    "lang": "zh"
   },
   "web": {
     "routes": {
