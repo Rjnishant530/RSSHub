@@ -583,6 +583,9 @@
     "EkkoG",
     "nczitzk"
   ],
+  "/apple/design": [
+    "jean-jacket"
+  ],
   "/apple/exchange_repair/:country?": [
     "metowolf",
     "HenryQW",
@@ -1252,6 +1255,12 @@
   "/cankaoxiaoxi/:id?": [
     "yuxinliu-alex",
     "nczitzk"
+  ],
+  "/capitalmind/insights": [
+    "Rjnishant530"
+  ],
+  "/capitalmind/podcasts": [
+    "Rjnishant530"
   ],
   "/cara/likes/:user": [
     "KarasuShin"
@@ -2036,6 +2045,13 @@
   "/deltaio/blog": [
     "RengarLee"
   ],
+  "/dev.to/guides": [
+    "Rjnishant530"
+  ],
+  "/dev.to/top/:period": [
+    "dwemerx",
+    "Rjnishant530"
+  ],
   "/devolverdigital/blog": [
     "XXY233"
   ],
@@ -2495,6 +2511,9 @@
     "KTachibanaM",
     "AiraNadih"
   ],
+  "/expats/czech-news/:category?": [
+    "nczitzk"
+  ],
   "/f-droid/apprelease/:app": [
     "garywill"
   ],
@@ -2837,6 +2856,9 @@
   ],
   "/gamme/:domain/:category?": [],
   "/gamme/:domain/tag/:tag": [],
+  "/gaoyu/blog": [
+    "nczitzk"
+  ],
   "/gcores/articles": [
     "nczitzk"
   ],
@@ -3642,8 +3664,9 @@
   "/hiring.cafe/jobs/:keywords": [
     "mintyfrankie"
   ],
-  "/hit/hitgs": [
-    "hlmu"
+  "/hit/hitgs/:id?": [
+    "hlmu",
+    "nczitzk"
   ],
   "/hit/jwc": [
     "lty96117"
@@ -4196,6 +4219,18 @@
   "/j-test/news": [
     "kuhahku"
   ],
+  "/jamesclear/book-summaries": [
+    "Rjnishant530"
+  ],
+  "/jamesclear/great-speeches": [
+    "Rjnishant530"
+  ],
+  "/jamesclear/quotes": [
+    "Rjnishant530"
+  ],
+  "/jamesclear/3-2-1": [
+    "Rjnishant530"
+  ],
   "/jandan/": [
     "nczitzk",
     "bigfei",
@@ -4279,6 +4314,9 @@
   ],
   "/jd/price/:id": [
     "nczitzk"
+  ],
+  "/jetbrains/youtrack/comments/:issueId": [
+    "NekoAria"
   ],
   "/jewishmuseum/exhibitions": [
     "chazeon"
@@ -4535,6 +4573,9 @@
   "/kimlaw/thesis": [
     "TonyRL"
   ],
+  "/kiro/blog": [
+    "nczitzk"
+  ],
   "/kisskiss/blog/:category?": [
     "keocheung"
   ],
@@ -4556,6 +4597,9 @@
   ],
   "/koreaherald/:category{.+}?": [
     "quiniapiezoelectricity"
+  ],
+  "/kovidgoyal/kitty/changelog": [
+    "xbot"
   ],
   "/kpmg/insights/:lang?": [
     "LogicJake"
@@ -4907,6 +4951,9 @@
   "/manhuagui/subscribe": [
     "shininome"
   ],
+  "/manus/blog": [
+    "cscnk52"
+  ],
   "/manyvids/profile/vids/:uid": [
     "TonyRL"
   ],
@@ -5211,6 +5258,15 @@
   "/mysql/release/:version?": [
     "nczitzk"
   ],
+  "/nankai/cc/:type?": [
+    "vicguo0724"
+  ],
+  "/nankai/jwc": [
+    "vicguo0724"
+  ],
+  "/nankai/notice": [
+    "vicguo0724"
+  ],
   "/nankai/yzb/:type?": [
     "sddzhyc"
   ],
@@ -5342,8 +5398,32 @@
   "/newseed/latest": [
     "p3psi-boo"
   ],
+  "/newslaundry/explainer": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/nl-cheatsheet": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/nl-collaborations": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/podcast/:category?": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/reports": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/shot": [
+    "Rjnishant530"
+  ],
+  "/newslaundry/subscriber-only": [
+    "Rjnishant530"
+  ],
   "/newsmarket/:category?": [
     "nczitzk"
+  ],
+  "/newswav/": [
+    "TonyRL"
   ],
   "/newyorker/:category": [
     "EthanWng97",
@@ -6439,6 +6519,9 @@
   "/radio-canada/latest/:language?": [
     "nczitzk"
   ],
+  "/railway/blog": [
+    "jihuayu"
+  ],
   "/rarehistoricalphotos/": [
     "TonyRL"
   ],
@@ -6504,6 +6587,9 @@
     "nczitzk"
   ],
   "/right/forum/:id?": [
+    "nczitzk"
+  ],
+  "/rockthejvm/articles": [
     "nczitzk"
   ],
   "/rodong/news/:language?": [
@@ -6915,7 +7001,7 @@
   "/sicau/dky/:category?": [
     "nczitzk"
   ],
-  "/sicau/jiaowu/jxtz": [
+  "/sicau/jiaowu/jxtz/:detail?": [
     "hualiong"
   ],
   "/sicau/jk/:gid/:typeId/:sortType/:token": [
@@ -7075,6 +7161,9 @@
   ],
   "/sorrycc/": [
     "KarasuShin"
+  ],
+  "/sotwe/user/:id": [
+    "TonyRL"
   ],
   "/soundofhope/:channel/:id": [
     "Fatpandac"
@@ -7406,6 +7495,9 @@
   "/tangshufang/:category?": [
     "nczitzk"
   ],
+  "/taobao/mysql/monthly": [
+    "nczitzk"
+  ],
   "/taobao/zhongchou/:type?": [
     "xyqfer",
     "Fatpandac"
@@ -7439,6 +7531,9 @@
   ],
   "/tass/:category?": [
     "TonyRL"
+  ],
+  "/techcrunch/category/:categoryId": [
+    "MilliumOrion"
   ],
   "/techcrunch/news": [
     "EthanWng97"
@@ -7773,6 +7868,9 @@
   ],
   "/ttv/:category?": [
     "dzx-dzx"
+  ],
+  "/tumblr/posts/:blog": [
+    "Rakambda"
   ],
   "/tvb/news/:category?/:language?": [
     "nczitzk"
