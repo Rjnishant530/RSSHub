@@ -27520,7 +27520,7 @@ export default {
       "/changelog": {
         "path": "/changelog",
         "name": "Changelog",
-        "url": "www.cursor.com",
+        "url": "cursor.com",
         "maintainers": [
           "p3psi-boo",
           "nczitzk"
@@ -27541,7 +27541,7 @@ export default {
         "radar": [
           {
             "source": [
-              "www.cursor.com/changelog"
+              "cursor.com/changelog"
             ],
             "target": "/changelog"
           }
@@ -27553,7 +27553,7 @@ export default {
     },
     "name": "Cursor",
     "apiRoutes": {},
-    "url": "www.cursor.com",
+    "url": "cursor.com",
     "description": "",
     "lang": "en"
   },
@@ -61389,6 +61389,39 @@ export default {
         "view": 0,
         "location": "blog.ts",
         "module": () => import('@/routes/kiro/blog.ts')
+      },
+      "/changelog": {
+        "path": "/changelog",
+        "name": "Changelog",
+        "url": "kiro.dev",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/kiro/changelog",
+        "categories": [
+          "program-update"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "kiro.dev",
+              "kiro.dev/changelog/"
+            ],
+            "target": "/changelog"
+          }
+        ],
+        "view": 0,
+        "location": "changelog.ts",
+        "module": () => import('@/routes/kiro/changelog.ts')
       }
     },
     "name": "Kiro",
